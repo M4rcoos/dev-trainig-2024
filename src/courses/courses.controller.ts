@@ -11,7 +11,6 @@ export class CoursesController {
     }
     @Get(':id')
     findUnique(@Param('id') id:number){
-        console.log("🚀 ~ CoursesController ~ findUnique ~ id:", id)
         return this.courseService.findOne(Number(id))
     }
     @Post()
