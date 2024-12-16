@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Motos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #ff8c00, #ff4500);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        section {
+            padding: 40px 20px;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: url('https://via.placeholder.com/1920x800') no-repeat center/cover;
+            height: 80vh;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: fadeInUp 1s ease;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+        .hero button {
+            margin-top: 30px;
+            padding: 10px 30px;
+            background: #ff4500;
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: fadeInUp 2s ease;
+        }
+        .hero button:hover {
+            background: #ff8c00;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .feature {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .cta {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(90deg, #ff4500, #ff8c00);
+            color: #fff;
+            border-radius: 10px;
+        }
+        .cta h2 {
+            margin-bottom: 20px;
+        }
+        .cta button {
+            padding: 10px 30px;
+            background: #fff;
+            border: none;
+            color: #ff4500;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cta button:hover {
+            background: #f9f9f9;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 300px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h4 {
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+        .card p {
+            padding: 0 10px 20px;
+            font-size: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alugue sua Moto Agora!</h1>
+    </header>
+    <section class="hero">
+        <h2>Descubra a liberdade sobre duas rodas</h2>
+        <p>Escolha entre uma variedade de motos perfeitas para você. Alugue agora e comece sua aventura!</p>
+        <button>Quero Alugar Agora</button>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <h3>Preços Acessíveis</h3>
+            <p>Economize e curta o melhor da experiência com nossas motos.</p>
+        </div>
+        <div class="feature">
+            <h3>Variedade de Modelos</h3>
+            <p>Escolha a moto ideal para qualquer ocasião ou destino.</p>
+        </div>
+        <div class="feature">
+            <h3>Fácil Locação</h3>
+            <p>Processo rápido e sem burocracia para você aproveitar mais.</p>
+        </div>
+    </section>
+    <section class="cards">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Moto 1">
+            <h4>Modelo Street</h4>
+            <p>Ideal para a cidade. Compacta, econômica e confortável.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Moto 2">
+            <h4>Modelo Adventure</h4>
+            <p>Para quem busca aventura em qualquer tipo de terreno.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Moto 3">
+            <h4>Modelo Touring</h4>
+            <p>Conforto e performance para longas viagens.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x200" alt="Moto 4">
+            <h4>Modelo Esportivo</h4>
+            <p>Alta performance para quem gosta de velocidade.</p>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Não perca tempo! Reserve já sua moto</h2>
+        <button>Alugar Agora</button>
+    </section>
+    <footer>
+        <p>&copy; 2024 Aluguel de Motos. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        const button = document.querySelector('.hero button');
+        button.addEventListener('click', () => {
+            alert('Obrigado por escolher alugar conosco!');
+        });
+    </script>
+</body>
+</html>

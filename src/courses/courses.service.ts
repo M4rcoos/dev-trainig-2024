@@ -1,8 +1,16 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Course } from './courses.entity';
+import { Course } from '../courses/entities/courses.entity';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class CoursesService {
+    constructor (
+        @InjectRepository(Course)
+        private readOnly curseRepository:Repository<Course>,
+        
+    ) {} 
+     
     private courses:Course[]=[
         {
             id:1,
@@ -31,6 +39,7 @@ export class CoursesService {
     }
     create(createCourseDTO:any){
         this.courses.push(createCourseDTO)
+        return createCourseDTO
     }
     update(id:number, updateCurseDTO:any){
         const existingCourse = this.findOne(id)
