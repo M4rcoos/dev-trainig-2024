@@ -8,19 +8,17 @@ import { UpdateCourseDTO } from './dto/update-course.dto';
 
 @Injectable()
 export class CoursesService {
-  constructor(
-    @InjectRepository(Course)
-    private readonly curseRepository: Repository<Course>,
-    @InjectRepository(Tag)
-    private readonly tagRepository: Repository<Tag>,
-  ) {}
+  @InjectRepository(Course)
+  private readonly curseRepository: Repository<Course>;
+  @InjectRepository(Tag)
+  private readonly tagRepository: Repository<Tag>;
 
   async findAll() {
     return this.curseRepository.find({ relations: ['tags'] });
   }
 
   async findOne(id: string) {
-    const course = await this.curseRepository.find({
+    const course = await this.curseRepository.findOne({
       where: { id },
       relations: ['tags'],
     });
@@ -30,6 +28,7 @@ export class CoursesService {
         HttpStatus.NOT_FOUND,
       );
     }
+
     return course;
   }
 
