@@ -24,8 +24,8 @@ export class CoursesController {
   }
 
   @Get(':id')
-  findUnique(@Param('id') id: number) {
-    return this.courseService.findOne(Number(id));
+  findUnique(@Param('id') id: string) {
+    return this.courseService.findOne(id);
   }
   @Post()
   create(@Body() body: CreateCourseDTO) {
@@ -33,12 +33,12 @@ export class CoursesController {
   }
   @HttpCode(200)
   @Put(':id')
-  update(@Param('id') id: number, @Body() body: UpdateCourseDTO) {
+  update(@Param('id') id: string, @Body() body: UpdateCourseDTO) {
     console.log('🚀 ~ CoursesController ~ update ~ id:', id, body);
-    return this.courseService.update(Number(id), body);
+    return this.courseService.update(id, body);
   }
   @Delete(':id')
-  remove(@Param('id') id: number) {
-    return this.courseService.remove(Number(id));
+  remove(@Param('id') id: string) {
+    return this.courseService.remove(id);
   }
 }

@@ -13,7 +13,7 @@ export const dataSourceOptions: DataSourceOptions = {
   password: 'docker',
   schema: 'public',
   entities: [Course, Tag],
-  synchronize: true,
+  synchronize: false,
 };
 @Module({
   imports: [

@@ -19,7 +19,7 @@ export class CoursesService {
     return this.curseRepository.find({ relations: ['tags'] });
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const course = await this.curseRepository.find({
       where: { id },
       relations: ['tags'],
@@ -42,7 +42,7 @@ export class CoursesService {
     return await this.curseRepository.save(course);
   }
 
-  async update(id: number, updateCurseDTO: UpdateCourseDTO) {
+  async update(id: string, updateCurseDTO: UpdateCourseDTO) {
     const tags =
       updateCurseDTO.tags &&
       (await Promise.all(
@@ -62,7 +62,7 @@ export class CoursesService {
     return this.curseRepository.save(courses);
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     const courses = await this.curseRepository.findOne({ where: { id } });
     if (!courses) {
       throw new HttpException(
